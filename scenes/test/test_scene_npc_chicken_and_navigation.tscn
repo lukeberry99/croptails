@@ -12,9 +12,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(118, 115, 255, 114, 282
 source_geometry_mode = 2
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6mqan"]
-vertices = PackedVector2Array(394.992, 133.5, 395, 133.656, 395, 150, 315, 150, 305.75, 133.5, 315, 181.5, 395, 181.5, 395, 214, 304.32, 214)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(5, 8, 4, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(296, 119, 365, 117, 404, 119, 408, 176, 409, 225, 405, 232, 330, 232, 294, 232)])
+vertices = PackedVector2Array(282.523, 239.328, 276.547, 121.648, 283, 122.039, 283, 133.5, 283, 214, 283, 239.344, 394.992, 133.5, 395, 133.656, 395, 150, 315, 150, 315, 181.5, 395, 181.5, 395, 214)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 0), PackedInt32Array(4, 0, 3), PackedInt32Array(6, 7, 8, 9, 3), PackedInt32Array(10, 11, 12, 4), PackedInt32Array(10, 4, 3, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(266, 111, 365, 117, 404, 119, 408, 176, 409, 225, 405, 232, 330, 251, 273, 249)])
 source_geometry_mode = 2
 
 [node name="TestSceneNPCChicken" type="Node2D"]
@@ -91,6 +91,7 @@ position = Vector2(211, 188)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Cows"]
 navigation_polygon = SubResource("NavigationPolygon_6mqan")
+navigation_layers = 2
 
 [node name="Cow" parent="Cows" instance=ExtResource("4_ykac3")]
 position = Vector2(329, 144)
@@ -99,10 +100,10 @@ position = Vector2(329, 144)
 position = Vector2(370, 144)
 
 [node name="Cow3" parent="Cows" instance=ExtResource("4_ykac3")]
-position = Vector2(311, 193)
+position = Vector2(322, 207)
 
 [node name="Cow4" parent="Cows" instance=ExtResource("4_ykac3")]
 position = Vector2(361, 213)
 
 [node name="Cow5" parent="Cows" instance=ExtResource("4_ykac3")]
-position = Vector2(311, 162)
+position = Vector2(311, 177)
