@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://co3noa8erjffq"]
+
+[ext_resource type="Theme" uid="uid://r2f327ecf0ef" path="res://scenes/ui/game_ui_theme.tres" id="1_l7g4n"]
+
+[node name="InventoryTwo" type="PanelContainer"]
+theme = ExtResource("1_l7g4n")
+theme_type_variation = &"DarkWoodPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Logs" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
