@@ -6,41 +6,27 @@ extends PanelContainer
 @onready var tool_tomato: Button = $MarginContainer/HBoxContainer/ToolTomato
 @onready var tool_tilling: Button = $MarginContainer/HBoxContainer/ToolTilling
 
-func _on_tool_axe_pressed() -> void:
-	if ToolManager.selected_tool != DataTypes.Tools.AxeWood:
-		ToolManager.select_tool(DataTypes.Tools.AxeWood)
-	else:
-		deselct_tool()
+func _ready() -> void:
+	ToolManager.tool_deselected.connect(on_tool_deselected)
+	ToolManager.tool_selected_via_input.connect(on_tool_selected_via_input)
 
-func _on_tool_tilling_pressed() -> void:
-	if ToolManager.selected_tool != DataTypes.Tools.TillGround:
-		ToolManager.select_tool(DataTypes.Tools.TillGround)
-	else:
-		deselct_tool()
-	
-func _on_tool_watering_pressed() -> void:
-	if ToolManager.selected_tool != DataTypes.Tools.WaterCrops:
-		ToolManager.select_tool(DataTypes.Tools.WaterCrops)
-	else:
-		deselct_tool()
-
-func _on_tool_corn_pressed() -> void:
-	if ToolManager.selected_tool != DataTypes.Tools.PlantCorn:
-		ToolManager.select_tool(DataTypes.Tools.PlantCorn)
-	else:
-		deselct_tool()
-
-func _on_tool_tomato_pressed() -> void:
-	if ToolManager.selected_tool != DataTypes.Tools.PlantTomato:
-		ToolManager.select_tool(DataTypes.Tools.PlantTomato)
-	else:
-		deselct_tool()
-
-func deselct_tool() -> void:
-	ToolManager.select_tool(DataTypes.Tools.None)
+func on_tool_deselected() -> void:
+	print('deslecting all tools')
 	tool_axe.release_focus()
 	tool_watering.release_focus()
 	tool_tilling.release_focus()
 	tool_corn.release_focus()
 	tool_tomato.release_focus()
-	
+
+func on_tool_selected_via_input(tool: DataTypes.Tools) -> void:
+	print('Selecting', tool)
+	if tool == DataTypes.Tools.AxeWood:
+		tool_axe.grab_focus()
+	if tool == DataTypes.Tools.WaterCrops:
+		tool_watering.grab_focus()
+	if tool == DataTypes.Tools.TillGround:
+		tool_tilling.grab_focus()
+	if tool == DataTypes.Tools.PlantCorn:
+		tool_corn.grab_focus()
+	if tool == DataTypes.Tools.PlantTomato:
+		tool_tomato.grab_focus()

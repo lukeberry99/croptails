@@ -23,3 +23,16 @@ static func is_movement_input() -> bool:
 
 static func use_tool() -> bool:
 	return Input.is_action_just_pressed('hit')
+
+static func tool_input() -> void:
+	
+	if Input.is_action_just_pressed('tool_1'):
+		ToolManager.select_tool_via_input(DataTypes.Tools.AxeWood)
+	if Input.is_action_just_pressed('tool_2'):
+		ToolManager.select_tool_via_input(DataTypes.Tools.TillGround)
+	if Input.is_action_just_pressed('tool_3'):
+		ToolManager.select_tool_via_input(DataTypes.Tools.WaterCrops)
+	if Input.is_action_just_pressed('tool_4'):
+		ToolManager.select_tool_via_input(DataTypes.Tools.PlantCorn)
+	if Input.is_action_just_pressed('tool_5'):
+		ToolManager.select_tool_via_input(DataTypes.Tools.PlantTomato)
