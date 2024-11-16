@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cgkhjilqlbhc3"]
+[gd_scene load_steps=25 format=4 uid="uid://cgkhjilqlbhc3"]
 
 [ext_resource type="PackedScene" uid="uid://cb2jwedlmwk31" path="res://scenes/components/day_night_cycle_component.tscn" id="1_g1aub"]
 [ext_resource type="TileSet" uid="uid://vvu5ts5ka70h" path="res://tilesets/game_tile_set.tres" id="2_beaxo"]
@@ -13,6 +13,47 @@
 [ext_resource type="PackedScene" uid="uid://dqieqt2iuobdp" path="res://scenes/components/save_level_data_component.tscn" id="9_dagxy"]
 [ext_resource type="Script" path="res://scenes/components/save_level_data_component.gd" id="10_u384s"]
 [ext_resource type="PackedScene" uid="uid://bqa4xbw7110kp" path="res://scenes/components/test_scene_save_data_manager.tscn" id="11_ejk6l"]
+[ext_resource type="PackedScene" uid="uid://cyye0valqs0ey" path="res://scenes/characters/guide/guide.tscn" id="14_ririh"]
+[ext_resource type="PackedScene" uid="uid://dsft6c5hfnsmq" path="res://scenes/objects/trees/large_tree.tscn" id="15_cweam"]
+[ext_resource type="Shader" path="res://scenes/objects/shake.gdshader" id="16_7xx6q"]
+[ext_resource type="PackedScene" uid="uid://cmjqta045m34k" path="res://scenes/objects/trees/small_tree.tscn" id="17_xfg1i"]
+[ext_resource type="PackedScene" uid="uid://7rucvgmdwop1" path="res://scenes/objects/rocks/rock.tscn" id="18_nruer"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5xlmi"]
+resource_local_to_scene = true
+shader = ExtResource("16_7xx6q")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 25.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0rm5t"]
+resource_local_to_scene = true
+shader = ExtResource("16_7xx6q")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 25.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74s3o"]
+resource_local_to_scene = true
+shader = ExtResource("16_7xx6q")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 25.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2pl2i"]
+resource_local_to_scene = true
+shader = ExtResource("16_7xx6q")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 25.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ujeqe"]
+resource_local_to_scene = true
+shader = ExtResource("16_7xx6q")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 25.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ienmb"]
+resource_local_to_scene = true
+shader = ExtResource("16_7xx6q")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 25.0
 
 [node name="TestSceneCropFields" type="Node2D"]
 
@@ -60,3 +101,30 @@ limit_left = 0
 limit_top = 0
 
 [node name="GameScreen" parent="." instance=ExtResource("4_1kgxq")]
+
+[node name="Guide" parent="." instance=ExtResource("14_ririh")]
+position = Vector2(193, 73)
+
+[node name="LargeTree" parent="." instance=ExtResource("15_cweam")]
+material = SubResource("ShaderMaterial_5xlmi")
+position = Vector2(256, 99)
+
+[node name="LargeTree2" parent="." instance=ExtResource("15_cweam")]
+material = SubResource("ShaderMaterial_0rm5t")
+position = Vector2(290, 100)
+
+[node name="SmallTree" parent="." instance=ExtResource("17_xfg1i")]
+material = SubResource("ShaderMaterial_74s3o")
+position = Vector2(252, 136)
+
+[node name="SmallTree2" parent="." instance=ExtResource("17_xfg1i")]
+material = SubResource("ShaderMaterial_2pl2i")
+position = Vector2(289, 138)
+
+[node name="Rock" parent="." instance=ExtResource("18_nruer")]
+material = SubResource("ShaderMaterial_ujeqe")
+position = Vector2(245, 213)
+
+[node name="Rock2" parent="." instance=ExtResource("18_nruer")]
+material = SubResource("ShaderMaterial_ienmb")
+position = Vector2(284, 238)

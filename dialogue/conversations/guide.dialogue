@@ -1,0 +1,14 @@
+~ start
+Farmer Joe: [[Well hello there|Greetings|Howdy|Sup]], welcome to your farm!
+Farmer Joe: I've got some seeds to help you get started.
+- Take the seeds
+	You took the seeds.
+	Farmer Joe: I hope this helps you build a lovely farm!
+	do GameDialogueManager.action_give_crop_seeds()
+- Don't take the seeds
+	You didn't take the seeds
+	Farmer Joe: Not sure how you're going to do any farming without any seeds!
+	Farmer Joe: I'm here if you change your mind.
+- End the conversation => END
+Farmer Joe: I love you
+=> END

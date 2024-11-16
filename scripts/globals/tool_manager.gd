@@ -5,6 +5,7 @@ var selected_tool: DataTypes.Tools = DataTypes.Tools.None
 signal tool_selected(tool: DataTypes.Tools)
 signal tool_deselected()
 signal tool_selected_via_input(tool: DataTypes.Tools)
+signal enable_tool(tool: DataTypes.Tools)
 
 func select_tool(tool: DataTypes.Tools) -> void:
 	tool_selected.emit(tool)
@@ -25,4 +26,5 @@ func select_tool_via_input(tool: DataTypes.Tools) -> void:
 		tool_selected_via_input.emit(tool)
 	ToolManager.toggle_tool(tool)
 	
-	
+func enable_tool_button(tool: DataTypes.Tools) -> void:
+	enable_tool.emit(tool)
